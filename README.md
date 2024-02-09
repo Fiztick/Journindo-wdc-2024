@@ -11,4 +11,5 @@ Jalankan "php artisan migrate --seed" atau import sendiri file sql dari "databas
 Jalankan "php artisan serve" di terminal
 
 ## Tujuan
-Untuk mengikuti Lomba Website Development Competition IFest UAJY
+Untuk mengikuti Lomba [IFest](https://ifest.uajy.ac.id/)
+
