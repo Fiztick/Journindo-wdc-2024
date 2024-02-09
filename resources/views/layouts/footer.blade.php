@@ -26,7 +26,7 @@
                         Copyright &copy;
                         <script>
                             document.write(new Date().getFullYear());
-                        </script> All rights reserved <a href="https://github.com/Fiztick">{{ config('app.name') }}</a>
+                        </script> All rights reserved <a href="https://github.com/Fiztick/Journindo-wdc-2024">{{ config('app.name') }}</a>
                         | This template is made with <i
                             class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com"
                             target="_blank">Colorlib</a>
