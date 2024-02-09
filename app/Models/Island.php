@@ -15,8 +15,8 @@ class Island extends Model
         return $this->hasMany(Region::class);
     }
     
-    public function images()
+    public function places()
     {
-        return $this->hasManyThrough(Image::class, Region::class);
+        return $this->hasManyThrough(Place::class, Region::class);
     }
 }

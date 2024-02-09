@@ -12,7 +12,7 @@
                         Through Indonesia</h1>
                     <p class="mb-5" data-aos="fade-up" data-aos-delay="100">Rasakan Keajaiban Tempat-tempat di Indonesia
                     </p>
-                    <p data-aos="fade-up" data-aos-delay="200"><a href="#pulau"
+                    <p data-aos="fade-up" data-aos-delay="200"><a href="#section-1"
                             class="btn btn-primary py-3 px-5 text-white" role="navigation">Get Started!</a>
                     </p>
                 </div>
@@ -22,7 +22,7 @@
 @endsection
 
 @section('section-1')
-    <div class="site-section bg-light" id="pulau">
+    <div class="site-section bg-light" id="section-1">
         <div class="container">
             <div class="row justify-content-center mb-5" data-aos="fade-up">
                 <div class="col-md-7 text-center border-primary">
@@ -37,36 +37,36 @@
                             <div class="unit-4-icon mr-4"><span class="text-primary"></span></div>
                             <div>
                                 <h3>{{ $island->name }}</h3>
-                                <div id="carousel{{ str_replace(' ', '', $island->name) }}" class="carousel slide"
+                                <div id="carousel{{ str_replace(' ', '-', $island->name) }}" class="carousel slide"
                                     data-ride="carousel">
                                     <div class="carousel-inner">
-                                        @foreach ($island->images as $key => $image)
+                                        @foreach ($island->places as $key => $place)
                                             <div class="carousel-item {{ $key === 0 ? 'active' : '' }}">
-                                                <img src="{{ asset($image->path) }}" class="img-fluid"
-                                                    alt="{{ $image->name }}">
+                                                <img src="{{ asset($place->path) }}" class="img-fluid"
+                                                    alt="{{ $place->name }}">
                                                 <div class="overlay"></div>
                                                 <div class="carousel-caption">
-                                                    <h6>- {{ $image->region->name }} -</h6>
-                                                    <h6>{{ $image->name }}</h6>
+                                                    <h6>- {{ $place->region->name }} -</h6>
+                                                    <h6>{{ $place->name }}</h6>
                                                 </div>
                                             </div>
                                         @endforeach
                                     </div>
                                     <a class="carousel-control-prev"
-                                        href="#carousel{{ str_replace(' ', '', $island->name) }}" role="button"
+                                        href="#carousel{{ str_replace(' ', '-', $island->name) }}" role="button"
                                         data-slide="prev">
                                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                         <span class="sr-only">Previous</span>
                                     </a>
                                     <a class="carousel-control-next"
-                                        href="#carousel{{ str_replace(' ', '', $island->name) }}" role="button"
+                                        href="#carousel{{ str_replace(' ', '-', $island->name) }}" role="button"
                                         data-slide="next">
                                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                         <span class="sr-only">Next</span>
                                     </a>
                                 </div>
                                 <p></p>
-                                <p><a href="#">Learn More</a></p>
+                                <p><a href="{{url('pulau/'.str_replace(' ', '-', $island->name))}}">Learn More</a></p>
                             </div>
                         </div>
                     </div>

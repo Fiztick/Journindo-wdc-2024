@@ -7,9 +7,11 @@ use Illuminate\Http\Request;
 
 class RegionController extends Controller
 {
+    
+
     public function data()
     {
-        $regions = Region::with('images')->get();
+        $regions = Region::with('places')->get();
 
         return response()->json($regions, 200);
     }

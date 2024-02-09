@@ -14,8 +14,8 @@ class Region extends Model
         return $this->belongsTo(Island::class);
     }
 
-    public function images()
+    public function places()
     {
-        return $this->hasMany(Image::class);
+        return $this->hasMany(Place::class);
     }
 }

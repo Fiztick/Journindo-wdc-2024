@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\IslandController;
+use App\Http\Controllers\PlaceController;
 use App\Http\Controllers\RegionController;
 use App\Models\Island;
 use Illuminate\Support\Facades\Route;
@@ -18,15 +19,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    $islands = Island::with('regions.images')->get();
+    $islands = Island::with('regions.places')->get();
 
-    $imagesArray = [];
+    $placesArray = [];
 
     foreach ($islands as $island) {
         foreach ($island->regions as $region) {
-            foreach ($region->images as $image) {
+            foreach ($region->places as $image) {
                 // Add image data to the array
-                $imagesArray[] = [
+                $placesArray[] = [
                     'name' => $image->name,
                     'island_name' => $island->name,
                     'region_name' => $region->name,
@@ -41,7 +42,10 @@ Route::get('/', function () {
     return view('welcome', compact('islands'));
 });
 
+// Route::get('/pulau/{nama-pulau}', [IslandController::class, 'index'])->name('island.index');
+Route::resource('/pulau', IslandController::class);
+
 Route::get('/island/data', [IslandController::class, 'data'])->name('island.data');
 Route::get('/region/data', [RegionController::class, 'data'])->name('region.data');
-Route::get('/image/data', [ImageController::class, 'data'])->name('image.data');
+Route::get('/places/data', [PlaceController::class, 'data'])->name('places.data');
 

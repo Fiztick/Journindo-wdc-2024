@@ -2,23 +2,18 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-11 col-xl-2 site-logo">
-                <h1 class="mb-0"><a href="{{url('/')}}" class="text-white h2 mb-0">{{config('app.name')}}</a></h1>
+                <h1 class="mb-0"><a href="{{ url('/') }}" class="text-white h2 mb-0">{{ config('app.name') }}</a>
+                </h1>
             </div>
             <div class="col-12 col-md-10 d-none d-xl-block">
                 <nav class="site-navigation position-relative text-right" role="navigation">
                     <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
-                        <li><a href="#section-home" class="nav-link">Home</a></li>
-                        <li><a href="#pulau" class="nav-link">Pulau</a></li>
-                        <li class="has-children">
-                            <a href="#section-about" class="nav-link">About Us</a>
-                            <ul class="dropdown">
-                                <li><a href="#section-how-it-works" class="nav-link">How It Works</a></li>
-                                <li><a href="#section-our-team" class="nav-link">Our Team</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#section-industries" class="nav-link">Industries</a></li>
-                        <li><a href="#section-blog" class="nav-link">Blog</a></li>
-                        <li><a href="#section-contact" class="nav-link">Contact</a></li>
+                        @if (url()->current() == url('/') || url()->current() == url('/#section-home') || url()->current() == url('/#section-1'))
+                            <li><a href="{{ url('/#section-home') }}" class="nav-link">Home</a></li>
+                            <li><a href="{{ url('/#section-1') }}" class="nav-link">Pulau</a></li>
+                        @else
+                            <li><a href="{{ url('/#section-home') }}" class="nav-link"><i class="fa fa-arrow-left"></i> Kembali</a></li>
+                        @endif
                     </ul>
                 </nav>
             </div>

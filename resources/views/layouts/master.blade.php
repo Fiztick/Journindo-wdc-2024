@@ -20,11 +20,11 @@
 
     <link rel="stylesheet" href="{{ asset('template/fonts/flaticon/font/flaticon.css') }}">
 
-
-
     <link rel="stylesheet" href="{{ asset('template/css/aos.css') }}">
 
     <link rel="stylesheet" href="{{ asset('template/css/style.css') }}">
+    
+    <link rel="stylesheet" href="{{ asset('template/css/font-awesome.min.css') }}">
 
 </head>
 
