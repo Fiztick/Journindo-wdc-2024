@@ -1,11 +1,14 @@
-# Install Vendor
+## Install Vendor
 Jalankan "composer install" atau "composer update" di terminal
 
-# Perbaiki file .env
+## Perbaiki file .env
 Ganti nama .env.example menjadi .env dan atur konfigurasi database
 
-# Migrate Database
+## Migrate Database
 Jalankan "php artisan migrate --seed" atau import sendiri file sql dari "database/exports"
 
-# Menjalankan Server
+## Menjalankan Server
 Jalankan "php artisan serve" di terminal
+
+## Tujuan
+Untuk mengikuti Lomba Website Development Competition IFest UAJY
